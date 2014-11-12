@@ -6,7 +6,7 @@ open FsUnit
 
 let isAnAnagram str = 
   // todo: implement algorithm that returns true or false if string 'str' is an anagram
-  // hint: http://en.wikipedia.org/wiki/Anagram
+  // hint: http://en.wikipedia.org/wiki/Palindrome
   false
 
 let mutable storedString = ""

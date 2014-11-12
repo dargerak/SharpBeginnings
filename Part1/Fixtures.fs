@@ -22,8 +22,8 @@ type FeatureFixture (source:string) =
         let s = File.OpenText(Path.Combine(Directory.GetCurrentDirectory(),source))
         definitions.GenerateScenarios(source,s)
 
-type SortingFeature () = inherit FeatureFixture("SortingFeature.txt")
-type CollectionFeature () = inherit FeatureFixture("SimpleCollectionFeature.txt")
+//type SortingFeature () = inherit FeatureFixture("SortingFeature.txt")
+//type CollectionFeature () = inherit FeatureFixture("SimpleCollectionFeature.txt")
 type FibonacciFeature () = inherit FeatureFixture("FibonacciFeature.txt")
-type AnagramFeature () = inherit FeatureFixture("AnagramFeature.txt")
-type ReverseFeature () = inherit FeatureFixture("ReverseFeature.txt")
+//type AnagramFeature () = inherit FeatureFixture("AnagramFeature.txt")
+//type ReverseFeature () = inherit FeatureFixture("ReverseFeature.txt")

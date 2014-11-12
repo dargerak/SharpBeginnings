@@ -9,17 +9,15 @@ let mutable fibonnaciNumber:int = -1
 let upperBound = 10000
 
 let rec fibonnaci number = 
-   //todo: write a recursive implementation of the fibonacci algorithm
-   // see http://en.wikipedia.org/wiki/Fibonacci_number
-   number
+   match number with
+   | 1-> 1
+   | 2 -> 1
+   | _ ->  fibonnaci (number - 1) + fibonnaci (number - 2)
 
 let fibonnaciSequence n=
-  //todo: using the fibonacci number algorithm, build a fibonacci sequence of the first 'n' numbers
-  //hints
-  // need a range of numbers
-  // need to convert that list of numbers in to fibonacci
-  // need to select first x fibonacci numbers
-  {0..1}
+  {1..1000}
+  |> Seq.map (fun x -> fibonnaci x) 
+  |> Seq.take n
     
 let [<Given>] ``a fibonacci sequence calculator`` ()= 
     ()
@@ -34,7 +32,7 @@ let [<Then>] ``the fib result should be (.*)`` (expected:int) =
     Assert.AreEqual(expected, fibonnaciNumber)
 
 let [<Then>] ``the fib set should contain (.*)`` (expected:int) =  
-    let doesExist=resultSet|> Seq.exists (fun x-> x= expected)
+    let doesExist=resultSet|> Seq.exists (fun x-> x = expected)
     Assert.IsTrue(doesExist, "Could not find it")
 
 let [<Then>] ``the fib result set length should be (.*)`` (len:int) =  

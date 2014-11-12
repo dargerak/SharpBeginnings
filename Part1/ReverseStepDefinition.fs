@@ -1,14 +1,16 @@
 ﻿module ReverseDefinition
 
+open System
 open TickSpec
 open NUnit.Framework
 open FsUnit
 
-let reverse str = 
+let reverse (str:string) = 
   //todo: implement algorithm to reverse a string
-  //NOTE: do not use Seq, List or Array.reverse for this exercise
-  "ti od"
-
+  let a = str.ToCharArray()
+  let b = Array.rev a
+  new String(b)
+  
 let mutable storedString = ""
 
 let [<Given>] ``a reversable string (.*)`` (str:string)= 
