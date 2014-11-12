@@ -11,11 +11,12 @@ let mutable sortedSet:int list=[]
 
 let listSorter (listy : int list)=
    //todo: implement sort algorithm
-    [0] 
-
-let isDivisbleBy x =
+    listy |> List.sortBy (fun x -> abs x)
+ 
+let isDivisbleBy number divisor =
     //TODO: Add your code here
-    false
+    ( number % divisor = 0) 
+    
 
 let randomCollection = 
     let rnd = System.Random()
@@ -25,7 +26,7 @@ let [<Given>] ``a collection from (.*) to (.*)`` (start:int)(en:int) =
     simpleCollection <- [start..en]
       
 let [<When>] ``I ask if the collection has items divisible by (.*)`` (n:int) =  
-    let boom= simpleCollection |>  List.filter isDivisbleBy
+    let boom= simpleCollection |>  List.filter (fun x -> isDivisbleBy x n)
     resultSet <- boom
       
 let [<Then>] ``the result set length should be (.*)`` (len:int) =  

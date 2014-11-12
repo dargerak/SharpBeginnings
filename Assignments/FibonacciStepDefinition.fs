@@ -9,9 +9,7 @@ let mutable fibonnaciNumber:int = -1
 let upperBound = 10000
 
 let rec fibonnaci x = 
-    match x with
-    | 1 | 2 -> 1
-    | x -> fibonnaci (x-1) + fibonnaci (x-2) 
+    0
     
 let fibonnaciSequence x=
   // need a range of numbers
